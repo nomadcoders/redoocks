@@ -15,8 +15,8 @@ const reducer = (state, action) => {
       };
     case DEL:
       return {
-        ...state,
-        toDos: state.toDos.filter(toDo => toDo.id !== action.payload)
+        toDos: state.toDos.filter((toDo) => toDo.id !== action.payload),
+        completed: state.completed.filter((toDo) => toDo.id !== action.payload),
       };
     case COMPLETE:
       const target = state.toDos.find(toDo => toDo.id === action.payload);
